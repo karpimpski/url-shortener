@@ -1,3 +1,33 @@
+body{
+  font-family: 'Roboto', sans-serif;
+  padding-top: 10%;
+}
+
 .invalid{
   background: red;  
+}
+
+.row{
+  display: flex;
+}
+
+.center{
+  justify-content: center;
+}
+
+p{
+  text-align: center;
+}
+
+#oldurl{
+  border: 2px solid black;
+  border-radius: 15px;
+  padding-left: 7px;
+  padding-right: 7px;
+  text-align: center;
+  width: 300px;
+}
+
+#oldurl:focus{
+  outline: none;
 }

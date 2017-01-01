@@ -14,7 +14,7 @@ form.addEventListener('submit', (e) => {
       urlInput.classList.add('invalid');
     }
     console.log(url);
-})
+});
 
 function getData(url){
   $.get( "/new/" + url, () => {})
