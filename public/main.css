@@ -1,10 +1,12 @@
 body{
   font-family: 'Roboto', sans-serif;
   padding-top: 10%;
+  background: #003A44;
 }
 
-.invalid{
-  background: red;  
+#oldurl.invalid{
+  background: rgba(0,0,0,0.5) !important;
+  transition: all 0.5s;
 }
 
 .row{
@@ -17,17 +19,27 @@ body{
 
 p{
   text-align: center;
+  color: #C2DEE5;
 }
 
 #oldurl{
-  border: 2px solid black;
-  border-radius: 15px;
+  border: none;
+  border-bottom: 2px solid #C2DEE5;
+  color: #C2DEE5;
   padding-left: 7px;
   padding-right: 7px;
   text-align: center;
   width: 300px;
+  background: gray;
+  background: none;
+  transition: all 0.5s;
 }
 
 #oldurl:focus{
   outline: none;
+  background: rgba(0,0,0,0.1);
+}
+
+a{
+  color: #06565A;
 }
