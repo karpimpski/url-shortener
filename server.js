@@ -22,7 +22,7 @@ app.get('/new/*', (req, res) => {
     db.collection('data').findOne({'old' : oldUrl}, (err, doc) => {
       if(err) throw err;
       if(doc !== null){
-        n = 'https://' + req.headers.host + '/' + doc.newUrl;
+        n = req.headers.host + '/' + doc.newUrl;
         o = doc.old;
         var obj = {'original_url': o, 'new_url': n};
         res.end(JSON.stringify(obj));
@@ -31,7 +31,7 @@ app.get('/new/*', (req, res) => {
       else{
         db.collection('data').insert({'old': oldUrl, 'newUrl': num}, (err, newDoc) => {
           if(err) throw err;
-          n = 'https://' + req.headers.host + '/' + newDoc.ops[0].newUrl;
+          n = req.headers.host + '/' + newDoc.ops[0].newUrl;
           o = newDoc.ops[0].old;
           var obj = {'original_url': o, 'new_url': n};
           res.end(JSON.stringify(obj));
@@ -72,7 +72,7 @@ app.get('/:id', (req, res) => {
       });
     });
   }
-  
+
   else{
     res.end('Please enter a valid ID.');
   }
